@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+{% block css %}
+{% endblock %}
+<link rel="stylesheet" href="/public/css/admin.css" type="text/css">
+<script src="/public/js/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+<div class="header">
+	<ul>
+    	<li><a href="#" class="txt">后台管理</a></li>
+        <li class="category"><a href="#">分类管理</a>
+        	<ul class="down_menu">
+            	<li><a href="/admin/category">分类首页</a></li>
+                <li><a href="/admin/category/add">添加分类</a></li>
+            </ul>
+        </li>
+        
+        <li class="category"><a href="#">内容管理</a>
+        	<ul class="down_menu">
+            	<li><a href="/admin/content">内容首页</a></li>
+                <li><a href="/admin/content/add">添加内容</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="name">{{userInfo.username}}<a id="logout" href="/">退出</a></div>
+</div>
+
+<div class="content">
+	{% block main %} {% endblock %}
+</div>
+{% block js %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content{width:1140px;overflow:hidden;margin:20px auto;position:relative;}
+.content .title{text-align:center;font-weight:bold;font-size:18px;}
+.content ul{width:1000px;overflow:hidden;margin:0 auto;}
+.content ul li{width:1000px;overflow:hidden;}
+
+.content .yiImg,.jiImg {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    *display: inline;
+    zoom:1;vertical-align: top;
+    font-size: 12px;
+    color: #fff;
+	margin:10px 0;
+    background-image:url(/public/images/yi-box-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px
+}
+.jiImg {
+    background-image: url(/public/images/ji-box-bg.png);
+}
+.content .p1{color:#7c4328;font-size:16px;font-weight:bold;background:url(/public/images/icon.png) left center no-repeat;background-size:30px 30px;padding-left:30px;line-height:30px;border-bottom:1px solid #CCC;margin:20px 0 10px;}
+.content .p2{color:#6BCBCA;font-weight:bold;margin-top:10px;}
+.content .p4{color:#ff0000;font-weight:bold;margin-top:10px;}
+.content .p3{color:#94846E;}
+.content .p5{color:#94846E;font-weight:bold;margin-top:5px;}

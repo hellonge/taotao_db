@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.mainRight .btn{    background: #e67e22;   width: 222px;  height: 34px; cursor: pointer;  border-radius: 3px;   color: #fff;text-transform: none;  font-size: 12px;outline:none;border:none;margin-top:10px;}
+.mainRight .textRight .colMint { color: #48c5a3;}
+.mainRight .txtMessage{color:#e67e22;font-size:16px;text-align:left;}

@@ -1,0 +1,171 @@
+@charset "utf-8";
+/* CSS Document */
+* {margin:0; padding:0; list-style:none;}
+body{  background:#fafafb;}
+
+
+.content{width:1200px;overflow:hidden;margin:20px auto;position:relative;}
+.dayView{width: 280px;float:left;}
+.main_right{width: 412px;float:left;height:900px;}
+.main_right .dayImg{width:412px;height:658px;} 
+.main_right .dayImg img{width:412px;}
+
+.calender {width:504px;float:left; border:1px solid #CCC; text-align:center; overflow:hidden; background:#FFF; /*position:absolute;left:280px;*/transition: all .4s;margin-top:30px;}
+.calender:hover {
+  transform: translateY(-2%);
+    box-shadow: 1px 4px 10px 2px #CCC;
+    -webkit-box-shadow: 1px 4px 10px 2px #CCC;
+    -moz-box-shadow: 1px 4px 10px 2px #CCC
+}
+.calender .headers{width:504px;overflow:hidden;height:40px;}
+.calender .headers .center{float:left;text-align:center;  margin-top: 10px;    margin-left: 130px;}
+.day.weekind .dayNum { color: #D93448;}
+.day.active .dayContent {border: 3px solid #fb0;}
+.day .dayContent {border: 3px solid transparent;}
+.day:hover .dayContent {border: 3px solid #fb0;}
+.day.rest {
+    background-image:url(/public/images/x-icon.png);
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+.day.work {
+    background-image:url(/public/images/b-icon.png);
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+.day.jieri .cnDate {color: #497F9D;}
+.day.last .dayContent,.day.next .dayContent { filter: alpha(opacity=20); opacity: .2;}
+.calender .year_month {color:#0000FF; line-height:30px;}
+.calender ol{width:504px; overflow:hidden;}
+.calender ol li { float:left; width:72px; height:50px; line-height:50px; text-align:center;}
+.calender ul{width:504px; overflow:hidden; }
+.calender ul li { float:left; width:72px; height:72px;  text-align:center;cursor: pointer;}
+
+.calender ul li .dayNum{height:20px;line-height:20px;color:#37334c;font-weight:bold;}
+.calender ul li .cnDate{height:20px;line-height:20px;font-size:12px;text-align:center;}
+.calender ul li .dayRemindListContent{height:20px;line-height:20px;font-size:12px;text-align:center;}
+.calender .week_end {color:#FF0000;}
+.calender .past {color:#CCC;}
+.calender .prev_month { width:9px;height:13px;display:inline-block;text-decoration:none;background:url(/public/images/l.png) no-repeat;vertical-align:middle;}
+.calender .next_month { width:9px;height:13px;display:inline-block;text-decoration:none;background:url(/public/images/r.png) no-repeat;vertical-align:middle;}
+.calender .dateTxt{display:inline-block;vertical-align:middle;margin:0 20px;    color: #D93448;}
+.calender .todayBtn{width:22px;height:22px; line-height:22px;text-align:center;text-decoration:none;border:1px solid #D93448;border-radius:50%;float:left;margin-left:22px;margin-top:10px;    color: #D93448;}
+.calender .todayBtn:hover{background: #D93448;color:#FFF;}
+/*宜忌*/
+.dayInfoContent {
+  
+}
+
+.yearMonth {
+    width: 100%;
+    text-align: center
+}
+
+.dayCount {
+    width: 100%;
+    text-align: center;
+    font-size: 30px
+}
+
+.lumarInfo1,.lumarInfo2 {
+    width: 100%;
+    text-align: center
+}
+
+.yearMonth {
+    margin: 20px auto 4px;
+    font-size: 18px;
+	font-weight:bold;
+    color: #111;
+}
+
+.dayCount {
+	width:134px;height:134px;text-align:center;line-height:134px;margin:0 auto;
+	color:#FFF;
+	font-weight:bold;
+    font-size: 72px;
+	background:url(/public/images/number_bg.png) no-repeat;
+}
+
+.festivalInfo {
+    width: 100%;
+    text-align: center;
+    margin: 1px auto 5px;
+    font-size: 12px;
+    color: #111
+}
+
+.lumarInfo1 {
+    margin: 1px auto 5px;
+    font-size: 12px;
+    color: #111
+}
+
+.lumarInfo2 {
+    font-size: 12px;
+    color: #111
+}
+
+
+
+.yiImg,.jiImg {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    *display: inline;
+    zoom:1;vertical-align: top;
+    font-size: 12px;
+    color: #fff;
+    margin: 0 10px;
+    background-image:url(/public/images/yi-box-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px
+}
+
+.yiViewContent>div.dayViewYiDescContent,.jiViewContent>div.dayViewJiDescContent {
+    width: 180px;
+    font-size: 13px;
+    color: #497f9d;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    *display: inline;
+    zoom:1;vertical-align: top;
+    line-height: 154%
+}
+
+.jiViewContent {
+    margin-top: 20px
+}
+
+.jiImg {
+    background-image:url(/public/images/ji-box-bg.png)
+}
+
+.jiViewContent>div.dayViewJiDescContent {
+    color: #D93448
+}
+
+.lunarImg {
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-image:url(/public/images/more-ll-box-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60px 20px;
+    font-size: 12px;
+    color: #fff;
+    margin:10px;
+}
+.lunatTxt{text-align:left;margin-left:10px;font-size:14px;}
+.dayViewContent .txt{font-size:14px;width:80px;border-radius:8px;height:16px;line-height:16px;text-align:center;border:1px solid #2a71ae;    color: #2a71ae;font-weight:bold;    margin-left: 10px;margin-top:10px;}
+.dayViewContent .txt:hover{  background: #2a71ae;color:#FFF;}

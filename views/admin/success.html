@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/public/css/admin.css" type="text/css">
+{% extends 'layout.html' %}
+
+{% block main %}
+<ol>
+	<li class="main"><a href="/">管理首页/</a></li>
+    <li><span>成功提示</span></a></li>
+</ol>
+<div class="message">{{ message }}</div>
+<a href="{{ url }}">点击这里跳转</a>
+<div class="foor"><a href="javascript:window.history.back();">返回上一步</a></div>
+
+ {% endblock %}

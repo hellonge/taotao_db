@@ -1,0 +1,218 @@
+{% extends 'layout.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/public/css/index.css">
+<link rel="stylesheet" href="/public/css/huanglixiandaiwen.css">
+{% endblock %}
+
+
+
+{% block header %}
+<div class="header"></div>
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+	<div class="content">
+    	<div class="title">黄历现代文</div>
+        <ul>
+        	<li>
+            	<p class="p1">宜忌</p>
+                <div class="yiImg">宜</div>
+                <div id="yiDiv"></div>
+                <!--<p class="p2">打扫：</p>
+                <p class="p3">老黄历中"解除"。打扫卫生,指冲洗、清扫宅舍、消除灾厄等事。</p>
+                <p class="p2">沐浴：</p>
+                <p class="p3">祈福、许愿而沐浴斋戒,洗澡。</p>
+                <p class="p2">破屋:</p>
+                <p class="p3">拆屋或者局部改造。</p>
+                <p class="p2">祭祀:</p>
+                <p class="p3">指祠堂祭祀、即拜祭祖先或庙寺的祭拜、神明等事。</p>
+                <p class="p2">求医：</p>
+                <p class="p3">仅指求医治疗慢性痼疾或动手术</p>
+                <p class="p2">治病：</p>
+                <p class="p3">治疗疾病。</p>
+                <p class="p2">馀事勿取:</p>
+                <p class="p3">宜：无所谓好也无所谓不好。忌：除了特别提出的以外的任何事情,都不应该做。</p>
+                <p class="p2">坏垣:</p>
+                <p class="p3">拆除围墙。</p>-->
+                <div class="jiImg">忌</div>
+                <div id="jiDiv"></div>
+                <!--<p class="p4">开业：</p>
+               	<p class="p3">老黄历中"开市"。开业之意。商店行号开张做生意。同“开幕礼”“开工”。包括:年头初开始营业或开工等事;新设店铺商行或新厂开幕等事。</p>
+                <p class="p4">祈福:</p>
+                <p class="p3">祈求神明降幅或设醮还愿之事</p>
+                <p class="p4">安葬:</p>
+                <p class="p3">举行埋葬等仪式。</p>
+                <p class="p4">斋醮：</p>
+                <p class="p3">庙宇建醮前举行的斋戒仪式。</p>-->
+                <p class="p1">冲煞</p>
+                <p class="p3">{{ ri }}日冲{{ chong }}({{ xiangchong1 }}{{ xiangchong2 }}相冲)煞{{ sha }}：<br>冲{{ chong }}日将冲到所有的{{ chong }},{{ xiangchong1 }}{{ xiangchong2 }}相冲,即{{ chong }}和{{ ri }}相冲,本日地支为{{ xiangchong1 }}{{ ri }},{{ chong }}为被冲的生肖,按传统黄历的观点,本日对于属{{ chong }}的人不太有利,不宜做重大的事,比如嫁娶、开业等。<br>本日煞{{ sha }},属{{ chong }}的人向{{ sha }}方行事要小心。</p>
+                <p class="p1">五行<br></p>
+                <p class="p3">今日的日柱干支纳音。</p>
+                <div id="wxDiv">
+                
+                </div>
+                <p class="p1">彭祖百忌<br></p>
+                <p class="p3">彭祖百忌指的是在天干地支记日中的某日或当日里的某时不要做某事否则会发生某事。</p>
+                <div id="pzDiv">
+                	
+                </div>
+            </li>
+        </ul>
+        	
+       
+    </div>
+    
+	<!--<div class="mainRight">
+    	{% if userInfo._id %}
+        <div id="userInfo">
+            <div id="name1">{{ userInfo.username }}</div>
+            {% if userInfo.isAdmin %}
+            <div id="name2">你好管理员<a href="/admin">进入管理</a></div>
+            {% else %}
+            <div id="name2">你好欢迎光临</a></div>
+            {% endif %}
+            <a id="logout" href="#">退出</a>
+        </div>
+        
+        {% else %}
+        <div id="register" style="display: none;">
+        <div class="title"><span>注册</span></div>
+        用户名：<input class="txt" name="username" type="text" id="username">
+        密码：<input class="txt" name="password" type="password" id="password">
+        确认密码：<input class="txt" name="repassword" type="password" id="repassword">
+        <input class="btn" type="button" value="注册">
+        
+        <p class="textRight">已有账号？<a href="javascript:;" class="colMint">马上登录</a>　</p>
+        <div class="txtMessage"></div>
+        </div>
+        
+        
+        <div id="login" >
+        <div class="title"><span>登录</span></div>
+        用户名：<input class="txt" type="text" name="username" id="username1" >
+        密码：<input class="txt" type="password" name="password" id="password1"	>
+        <input class="btn" type="button" value="登录">
+        
+        <p class="textRight">还没注册？<a href="javascript:;" class="colMint">马上注册</a>　</p>
+        <div class="txtMessage"></div>
+        </div>
+        {% endif %}
+	</div>-->
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="/public/js/main/yjTxt.js"></script>
+<script>
+var yiDiv=document.getElementById('yiDiv');
+var yi=getCookie("yi").split(' ');
+var ji=getCookie("ji").split(' ');
+var wx=getCookie("wx").split(' ');
+var pz=getCookie("pz").split(' ');
+
+for(var i=0;i<yi.length;i++)
+{
+	var p2=document.createElement('p');	
+	p2.className='p2';
+	var p3=document.createElement('p');	
+	p3.className='p3';
+	if(!yi[i])
+	{
+		p2.innerHTML="无";
+		p3.innerHTML="无";
+	}
+	else
+	{
+		p2.innerHTML=yi[i]+':';
+		p3.innerHTML=yjTxt[yi[i]];
+	}
+	
+	yiDiv.appendChild(p2);
+	yiDiv.appendChild(p3);
+}
+var jiDiv=document.getElementById('jiDiv');
+for(var i=0;i<ji.length;i++)
+{
+	var p4=document.createElement('p');	
+	p4.className='p4';
+	var p5=document.createElement('p');	
+	p5.className='p3';
+	if(!ji[i])
+	{
+		p4.innerHTML="无";
+		p5.innerHTML="无";
+	}
+	else
+	{
+		p4.innerHTML=ji[i]+':';
+		p5.innerHTML=yjTxt[ji[i]];
+	}
+	
+	jiDiv.appendChild(p4);
+	jiDiv.appendChild(p5);
+}
+var wxDiv=document.getElementById('wxDiv');
+for(var i=0;i<wx.length;i++)
+{
+	var p6=document.createElement('p');	
+	var p7=document.createElement('p');
+	p7.className='p5';	
+	p6.className='p3';
+	
+		p7.innerHTML=wx[i]+':';
+		p6.innerHTML=wxTxt[wx[i]];
+	
+	wxDiv.appendChild(p7);
+	wxDiv.appendChild(p6);
+}
+
+var pzDiv=document.getElementById('pzDiv');
+for(var i=0;i<pz.length;i++)
+{
+	var p8=document.createElement('p');	
+	var p9=document.createElement('p');
+	p9.className='p5';	
+	p8.className='p3';
+	if(!pz[i])
+	{
+		p8.innerHTML="无";
+	}
+	else
+	{
+		p9.innerHTML=pz[i]+':';
+		p8.innerHTML=pzTxt[pz[i]];
+	}
+	pzDiv.appendChild(p9);
+	pzDiv.appendChild(p8);
+}
+
+
+
+function getCookie(name)
+{
+	//'user=blue; pass=123456; sex=male'
+	var arr=document.cookie.split('; ');
+	
+	//arr=['user=blue', 'pass=123456', ....]
+	for(var i=0;i<arr.length;i++)
+	{
+		var arr2=arr[i].split('=');
+		
+		//arr2[0]	'user'
+		//arr2[1]	'blue'
+		
+		if(arr2[0]==name)
+		{
+			return arr2[1];
+		}
+	}
+	
+	return '';
+}
+</script>
+<!--<script src="/public/js/main/index.js"></script>-->
+{% endblock %}

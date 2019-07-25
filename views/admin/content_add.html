@@ -1,0 +1,32 @@
+                                                                                                                                                                                                  
+{% extends 'layout.html' %}
+
+{% block main %}
+<ol>
+	<li class="main"><a href="/">管理首页/</a></li>
+    <li><span>内容添加</span></a></li>
+</ol>
+
+<form role="form" method="post">
+<label for="title">分类：</label>
+<select name="category" id="category">
+	{% for category in categories %}
+    <option value="{{category.id}}"> {{ category.name }}</option>
+    {% endfor %}
+</select><br>
+
+
+<label for="title">标题</label>
+<input type="text" placeholder="请输入标题" id="title" name="title">
+
+<label for="description">简介：</label>
+<textarea name="description" id="description" placeholder="请输入内容简介" rows="5"></textarea>
+
+<label for="content">内容：</label>
+<textarea name="content" id="content" placeholder="请输入内容" rows="10"></textarea>
+
+<button type="submit">提交</button>
+</form>
+
+
+ {% endblock %}
